@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2017 riddles.io (developers@riddles.io)
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,20 +17,24 @@
  *     file that was distributed with this source code.
  */
 
-using System;
-using GoladBot.Bot;
+using System.Text;
+using System.Collections.Generic;
 
-namespace GoladBot
+using GoladBot.Field;
+
+namespace GoladBot.Move
 {
-    /**
-     * Main class. This bot is a direction port of the Java starterbot.
-     */
-    class Program
+    public class KillMove: AbstractMove
     {
-        static void Main(string[] args)
-        {
-            BotParser parser = new BotParser(new BotStarter());
-            parser.Run();
+        public Point KillPoint { get; private set; }
+
+        public KillMove(Point killPoint) {
+            MoveType = MoveType.Kill;
+            KillPoint = killPoint;
+        }
+
+        public override string ToString() {
+            return $"{MoveType.ToString()} {PointToString(KillPoint)}";
         }
     }
 }

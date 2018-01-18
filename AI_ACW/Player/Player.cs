@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2017 riddles.io (developers@riddles.io)
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,20 +17,20 @@
  *     file that was distributed with this source code.
  */
 
-using System;
-using GoladBot.Bot;
-
-namespace GoladBot
+namespace GoladBot.Player
 {
     /**
-     * Main class. This bot is a direction port of the Java starterbot.
+     * Stores all information about a player
      */
-    class Program
+    public class Player
     {
-        static void Main(string[] args)
+        public string Name { get; private set; }
+        public int LivingCells { get; set; }
+        public string previousMove { get; set; }
+
+        public Player(string playerName)
         {
-            BotParser parser = new BotParser(new BotStarter());
-            parser.Run();
+            Name = playerName;
         }
     }
 }

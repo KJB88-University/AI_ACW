@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2017 riddles.io (developers@riddles.io)
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,20 +17,17 @@
  *     file that was distributed with this source code.
  */
 
-using System;
-using GoladBot.Bot;
-
-namespace GoladBot
+namespace GoladBot.Field
 {
-    /**
-     * Main class. This bot is a direction port of the Java starterbot.
-     */
-    class Program
+    public class Point
     {
-        static void Main(string[] args)
+        public int X { get; set; }
+        public int Y { get; set; }
+
+        public Point(int x, int y)
         {
-            BotParser parser = new BotParser(new BotStarter());
-            parser.Run();
+            X = x;
+            Y = y;
         }
     }
 }
