@@ -19,6 +19,7 @@
 
 using System;
 using GoladBot.Bot;
+using System.IO;
 
 namespace GoladBot
 {
@@ -30,6 +31,7 @@ namespace GoladBot
         static void Main(string[] args)
         {
             BotParser parser = new BotParser(new BotStarter());
+            Console.SetIn(new StreamReader(Console.OpenStandardInput(512)));
             parser.Run();
         }
     }
